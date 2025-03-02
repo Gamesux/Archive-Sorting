@@ -1,7 +1,7 @@
-﻿$mainfolder = Get-ChildItem 'C:\Users\Johanna\Documents\Prüfanweisungen\' | where { $_.PsIsContainer -eq $true } #Grabs only Folders from the main folder and ignores files
+﻿$mainfolder = Get-ChildItem 'C:\Users\Monika\Documents\Prüfanweisungen\' | where { $_.PsIsContainer -eq $true } #Grabs only Folders from the main folder and ignores files
 foreach ($folder in $mainfolder) {
         $articlefolder = $folder                                	 				#Just makes $folder into $articlefolder, might aswell could just $folder itself...
-        $anweisungpath = 'C:\Users\Johanna\Documents\Prüfanweisungen\' + $articlefolder 			#The above specified Article folders path is turned into a Variable for easier use
+        $anweisungpath = 'C:\Users\Monika\Documents\Prüfanweisungen\' + $articlefolder 			#The above specified Article folders path is turned into a Variable for easier use
         if ($articlefolder) {                                                				#If the check that Archive is missing is true
 	        $prüfanweisung = Get-ChildItem $anweisungpath | Sort-Object -Property LastWriteTime 	#Files from the Article folder are sorted by their Last Write Time
 	        foreach ($file in $prüfanweisung) {
